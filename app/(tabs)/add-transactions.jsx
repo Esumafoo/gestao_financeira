@@ -35,14 +35,14 @@ export default function AddTransactions() {
   const [newCategoryName, setNewCategoryName] = useState("");
 
   const [
-    transactions,
-    setTransactions,
-    , , ,
-    updateTransaction,
-    editingTransaction,
-    setEditingTransaction,
-    categories,
-    addCategory,
+    transactions,           // 0
+    setTransactions,        // 1
+    , , ,                    // 2: filterDate, 3: setFilterDate, 4: deleteTransaction
+    ,                        // 5: updateTransaction (não usado aqui)
+    editingTransaction,      // 6
+    setEditingTransaction,   // 7
+    ,                        // 8: categories (lido diretamente no CategoryPicker)
+    addCategory,             // 9
   ] = useContext(MoneyContext);
 
   useEffect(() => {

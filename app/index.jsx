@@ -5,7 +5,10 @@ import { View, ActivityIndicator, StyleSheet } from "react-native";
 import { colors } from "../constants/colors";
 
 export default function Index() {
-  const [userName, , isReady] = useContext(MoneyContext);
+  // MoneyContext é um array posicional: userName está no índice 10 e isReady no 12.
+  const context = useContext(MoneyContext);
+  const userName = context[10];
+  const isReady = context[12];
 
   if (!isReady) {
     return (

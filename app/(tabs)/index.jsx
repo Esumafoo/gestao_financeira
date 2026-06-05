@@ -9,10 +9,14 @@ import { router } from "expo-router";
 
 export default function Transactions() {
   const [
-    transactions,
-    filterDate,
-    deleteTransaction,               
-    setEditingTransaction 
+    transactions,           // 0
+    ,                        // 1: setTransactions
+    filterDate,              // 2
+    ,                        // 3: setFilterDate
+    deleteTransaction,       // 4
+    ,                        // 5: updateTransaction
+    ,                        // 6: editingTransaction
+    setEditingTransaction,   // 7
   ] = useContext(MoneyContext);
 
   const [selectedItem, setSelectedItem] = useState(null);

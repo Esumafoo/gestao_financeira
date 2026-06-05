@@ -1,15 +1,15 @@
 import { useState, useContext } from "react";
 import { View, Text, TextInput, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
 import { MoneyContext } from "../contexts/GlobalState";
-import { globalStyles } from "../styles/globalStyles";
 import { colors } from "../constants/colors";
 import Button from "../components/Button";
-import { router } from "expo-router";
 
 export default function Welcome() {
   const [name, setName] = useState("");
   
-  const [saveUserName] = useContext(MoneyContext);
+  // MoneyContext é um array posicional: saveUserName está no índice 11.
+  const context = useContext(MoneyContext);
+  const saveUserName = context[11];
 
   const handleStart = async () => {
     if (name.trim().length < 2) return;
